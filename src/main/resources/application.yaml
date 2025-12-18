@@ -1,10 +1,13 @@
 spring:
+  config:
+    import: optional:file:./.env[.properties]
+
   application:
     name: mini-application-01
   datasource:
-    url: jdbc:postgresql://localhost:19099/app-db
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
