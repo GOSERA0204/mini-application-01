@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: mini-application-01
+  datasource:
+    url: jdbc:postgresql://localhost:19099/app-db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.tool.schema: debug
